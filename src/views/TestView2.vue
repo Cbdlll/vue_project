@@ -29,7 +29,7 @@ const change = () => {
 }
 </script>
 
-<style>
+<style scoped>
 .example-basic .el-date-editor {
   margin: 8px;
 }

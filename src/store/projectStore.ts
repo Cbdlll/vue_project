@@ -1,16 +1,11 @@
-import type { Course, User, ResultVO } from '@/data/data'
+import type { User, ResultVO } from '@/data/data'
 import axios from '@/axios'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import router from '@/router'
 
 export const useprojectStore = defineStore('ProjectStore', () => {
-  const coursesS = ref<Course[]>([])
   const userS = ref<User>({})
-  const getCoursesA = async () => {
-    const resp = await axios.get<ResultVO<{ courses: Course[] }>>('getCourses')
-    coursesS.value = resp.data.data?.courses
-  }
 
   const loginA = async (data: { account: string; password: string }) => {
     // try可避免控制台的未捕获异常信息
@@ -26,9 +21,7 @@ export const useprojectStore = defineStore('ProjectStore', () => {
   }
 
   return {
-    coursesS,
     userS,
-    loginA,
-    getCoursesA
+    loginA
   }
 })

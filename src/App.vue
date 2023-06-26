@@ -16,4 +16,10 @@ const store = useStore()
 const exception = computed(() => store.exceptionS)
 </script>
 
-<style></style>
+<style>
+* {
+  font-family: NSimSun;
+  font-size: large;
+  font-weight: bolder;
+}
+</style>

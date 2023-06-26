@@ -1,59 +1,45 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header id="header">Header</el-header>
+      <el-header id="header"
+        ><img id="logo" src="../assets/logo.png" />东北林业大学-软件工程-毕设选导师系统</el-header
+      >
       <el-container>
-        <el-aside width="200px" id="side">
-          <el-menu
-            default-active="2"
-            class="el-menu-vertical-demo"
-            @open="handleOpen"
-            @close="handleClose"
-          >
-            <el-sub-menu index="1">
-              <template #title>
-                <el-icon><location /></el-icon>
-              </template>
-
-              <el-menu-item index="1-1">个人信息</el-menu-item>
-            </el-sub-menu>
-          </el-menu></el-aside
-        >
         <el-container>
           <el-main id="main">Main</el-main>
-          <el-footer id="footer">Footer</el-footer>
+          <el-footer id="footer"><p>@ NEFU_CCEC</p></el-footer>
         </el-container>
       </el-container>
     </el-container>
   </div>
 </template>
 
-<script lang="ts" setup>
-import { Document, Menu as IconMenu, Location, Setting } from '@element-plus/icons-vue'
-const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
-const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
-</script>
+<script lang="ts" setup></script>
 
 <style scoped>
 #header {
+  background-image: url(../assets/login.png);
+  width: 100%;
   height: 50px;
-  background-color: #ccffcc;
+  font-family: 'Lucida Calligraphy', cursive, serif, sans-serif;
+  font-size: xx-large;
+  color: white;
 }
-#side {
-  background-color: #ffffff;
-}
+
 #main {
-  height: 600px;
+  height: 625px;
   background-color: #ffffff;
 }
 #footer {
+  background-image: url(../assets/login.png);
+  width: 100%;
   height: 50px;
-  background-color: #66cccc;
   padding: auto;
   text-align: center;
+  color: white;
+}
+#logo {
+  width: 40px;
+  height: 40px;
 }
 </style>

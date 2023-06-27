@@ -26,7 +26,7 @@ import { storeToRefs } from 'pinia'
 const store = useprojectStore()
 const teachers = storeToRefs(store).teachers
 
-const tableRowClassName = ({ row, rowIndex }: { row: Teacher; rowIndex: number }) => {
+const tableRowClassName = ({ row }: { row: Teacher }) => {
   if (row.count == row.max_count) {
     return 'warning-row'
   } else {

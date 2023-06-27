@@ -1,4 +1,5 @@
-import type { User, ResultVO } from '@/data/data'
+import type { User, ResultVO, Teacher } from '@/data/data'
+import { listTeachers } from '@/datasource/datasource'
 import axios from '@/axios'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
@@ -6,7 +7,7 @@ import router from '@/router'
 
 export const useprojectStore = defineStore('ProjectStore', () => {
   const userS = ref<User>({})
-
+  const teachers = ref<Teacher[]>(listTeachers())
   const loginA = async (data: { account: string; password: string }) => {
     // try可避免控制台的未捕获异常信息
     try {
@@ -22,6 +23,7 @@ export const useprojectStore = defineStore('ProjectStore', () => {
 
   return {
     userS,
-    loginA
+    loginA,
+    teachers
   }
 })

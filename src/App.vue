@@ -18,6 +18,7 @@ const exception = computed(() => store.exceptionS)
 
 <style>
 * {
+  /* border: 1px solid red; */
   font-family: NSimSun;
   font-size: large;
   font-weight: bolder;
